@@ -19,6 +19,8 @@ Plugin 'tpope/vim-commentary'
 " plugin for statushightlighting 
 Plugin 'vim-airline/vim-airline'
 
+" systax checking 
+Plugin 'vim-syntastic/syntastic' 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -44,6 +46,15 @@ inoremap <C-v> <ESC>"+p
 inoremap <C-c> "+y
 vnoremap <C-d> "+m 
 
+let &t_SI = "\e[5 q"
+let &t_EI = "\e[2 q"
+
+" optional reset cursor on start:
+" augroup myCmds
+" au!
+" autocmd VimEnter * silent !echo -ne "\e[2 q"
+" augroup END
+
 " Set compatibility to Vim only.
 set nocompatible
 
@@ -52,6 +63,16 @@ filetype off
 
 " Turn on syntax highlighting.
 syntax on
+
+" Syntastic syntax checker options 
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list = 1
+" let g:syntastic_check_on_open = 1
+" let g:syntastic_check_on_wq = 0
 
 " For plug-ins to load correctly.
 filetype plugin indent on
@@ -91,8 +112,9 @@ set showcmd
 set matchpairs+=<:>
 
 " Display different types of white spaces.
-set list
-set listchars=tab:›\ ,trail:•,extends:#,nbsp:.
+" set list
+set nolist
+" set listchars=tab:›\ ,trail:•,extends:#,nbsp:.
 
 " Show line numbers
 set number
