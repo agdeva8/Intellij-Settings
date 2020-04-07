@@ -19,8 +19,9 @@ Plugin 'tpope/vim-commentary'
 " plugin for statushightlighting 
 Plugin 'vim-airline/vim-airline'
 
-" systax checking 
-Plugin 'vim-syntastic/syntastic' 
+" " systax checking 
+" Plugin 'vim-syntastic/syntastic' 
+" ALE is doing good job
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -73,16 +74,15 @@ syntax on
 " set statusline+=%#warningmsg#
 " set statusline+=%{SyntasticStatuslineFlag()}
 " set statusline+=%*"
-    let g:airline#extensions#ale#enabled = 0
-
+  let g:airline#extensions#ale#enabled = 1
   let g:airline#extensions#whitespace#enabled = 0
 
-  let g:airline#extensions#syntastic#enabled = 1
-"
-  let airline#extensions#syntastic#error_symbol = 'Err:'
-  let airline#extensions#syntastic#stl_format_err = '%E{[%fe(#%e)]}'
-  let airline#extensions#syntastic#warning_symbol = 'Warn:'
-  let airline#extensions#syntastic#stl_format_warn = '%W{[%fw(#%w)]}'
+  "let g:airline#extensions#syntastic#enabled = 1
+""
+  "let airline#extensions#syntastic#error_symbol = 'Err:'
+  "let airline#extensions#syntastic#stl_format_err = '%E{[%fe(#%e)]}'
+  "let airline#extensions#syntastic#warning_symbol = 'Warn:'
+  "let airline#extensions#syntastic#stl_format_warn = '%W{[%fw(#%w)]}'
 
 " let g:syntastic_stl_format = "[%E{Err: %fe #%e}%B{, }%W{Warn: %fw #%w}]"
 
