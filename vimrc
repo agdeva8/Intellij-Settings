@@ -64,10 +64,27 @@ filetype off
 " Turn on syntax highlighting.
 syntax on
 
+" Airline conifiguration for status line 
+ " let g:airline#extensions#default#layout = [
+ "      \ [ 'a', 'b', 'c' ],
+ "      \ [ 'x', 'y', 'z' ]
+ "      \ ]"
 " Syntastic syntax checker options 
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*"
+    let g:airline#extensions#ale#enabled = 0
+
+  let g:airline#extensions#whitespace#enabled = 0
+
+  let g:airline#extensions#syntastic#enabled = 1
+"
+  let airline#extensions#syntastic#error_symbol = 'Err:'
+  let airline#extensions#syntastic#stl_format_err = '%E{[%fe(#%e)]}'
+  let airline#extensions#syntastic#warning_symbol = 'Warn:'
+  let airline#extensions#syntastic#stl_format_warn = '%W{[%fw(#%w)]}'
+
+" let g:syntastic_stl_format = "[%E{Err: %fe #%e}%B{, }%W{Warn: %fw #%w}]"
 
 " let g:syntastic_always_populate_loc_list = 1
 " let g:syntastic_auto_loc_list = 1
