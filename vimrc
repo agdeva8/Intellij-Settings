@@ -19,6 +19,12 @@ Plugin 'tpope/vim-commentary'
 " plugin for statushightlighting 
 Plugin 'vim-airline/vim-airline'
 
+" autocomplete plugin
+Plugin 'Valloric/YouCompleteMe'
+
+" Auto format plugin 
+Plugin 'Chiel92/vim-autoformat'
+
 " " systax checking 
 " Plugin 'vim-syntastic/syntastic' 
 " ALE is doing good job
@@ -44,8 +50,11 @@ set hidden " Hide buffers when they are abandoned
 set clipboard=unnamed
 
 inoremap <C-v> <ESC>"+p
-inoremap <C-c> "+y
-vnoremap <C-d> "+m 
+map <C-c> "+y
+map <C-d> "+m 
+
+" autoformat plugin keymaps 
+map <F3> :Autoformat<CR>
 
 let &t_SI = "\e[5 q"
 let &t_EI = "\e[2 q"
@@ -74,6 +83,7 @@ syntax on
 " set statusline+=%#warningmsg#
 " set statusline+=%{SyntasticStatuslineFlag()}
 " set statusline+=%*"
+  let g:airline#symbols#linenr = 'L'
   let g:airline#extensions#ale#enabled = 1
   let g:airline#extensions#whitespace#enabled = 0
 
