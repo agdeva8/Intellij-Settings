@@ -25,6 +25,8 @@ Plugin 'Valloric/YouCompleteMe'
 " Auto format plugin 
 Plugin 'Chiel92/vim-autoformat'
 
+" Auto save
+Plugin '907th/vim-auto-save'
 " " systax checking 
 " Plugin 'vim-syntastic/syntastic' 
 " ALE is doing good job
