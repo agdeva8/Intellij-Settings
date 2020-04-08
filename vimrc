@@ -68,7 +68,14 @@ let &t_EI = "\e[2 q"
 " Set compatibility to Vim only.
 set nocompatible
 
-" Helps force plug-ins to load correctly when it is turned back on below.
+" You Complete Me
+
+" Helpsutoclose_preview_window_after_completion=1
+
+let g:ycm_autoclose_preview_window_after_completion=1
+map fg  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+
+"force plug-ins to load correctly when it is turned back on below.
 filetype off
 
 " Turn on syntax highlighting.
